@@ -20,11 +20,13 @@ class GiftWrapDecorator extends ProductDecorator {
     }
 
     getPrice() {
-        // TODO: Return the product's original price + a $5 gift wrap fee.
+        // Giá gốc + $5 cho gift wrap
+        return this.product.getPrice() + 5;
     }
 
     getDescription() {
-        // TODO: Return the product's original description + ", gift wrapped".
+        // Mô tả gốc + ", gift wrapped"
+        return this.product.getDescription() + ', gift wrapped';
     }
 }
 
@@ -35,23 +37,27 @@ class ExtendedWarrantyDecorator extends ProductDecorator {
     }
 
     getPrice() {
-        // TODO: Return the product's original price + a $20 warranty fee.
+        // Giá gốc + $20 cho bảo hành mở rộng
+        return this.product.getPrice() + 20;
     }
 
     getDescription() {
-        // TODO: Return the product's original description + ", with extended warranty".
+        // Mô tả gốc + ", with extended warranty"
+        return this.product.getDescription() + ', with extended warranty';
     }
 }
 
-// We need a base Product class with the same interface to decorate it
+// Base Product class
 class BaseProduct {
     constructor(name, price) {
         this._name = name;
         this._price = price;
     }
+
     getPrice() {
         return this._price;
     }
+
     getDescription() {
         return this._name;
     }

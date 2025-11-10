@@ -36,15 +36,15 @@ class AddToCartCommand extends Command {
     }
 
     execute() {
-        // TODO: Implement the execute method.
-        // It should call the `addProduct` method of the `cartService`.
+        // Thêm sản phẩm vào cart
+        this.cartService.addProduct(this.product);
     }
 
     undo() {
-        // TODO: Implement the undo method.
-        // It should call the `removeProduct` method of the `cartService`,
-        // using the product's ID.
+        // Xóa sản phẩm khỏi cart theo ID
+        this.cartService.removeProduct(this.product.id);
     }
 }
+
 
 export { CommandInvoker, AddToCartCommand };
